@@ -477,6 +477,44 @@ h1 em {
   color: var(--lapis);
 }
 
+/* ---------- Página 404 ---------- */
+
+.erro {
+  grid-template-columns: 1fr;
+  border-bottom: 0;
+}
+
+.diagnostico {
+  max-width: 34rem;
+  margin: 2.5rem 0 0;
+  border-top: 1px solid var(--tinta);
+  font-family: var(--mono);
+  font-size: 0.875rem;
+}
+
+.diagnostico div {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.25rem 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--linha);
+}
+
+.diagnostico dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--lapis);
+  padding-top: 0.1rem;
+}
+
+.diagnostico dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.erro-codigo { color: var(--marca); font-weight: 500; }
+
 /* ---------- Telas menores ---------- */
 
 @media (max-width: 64rem) {
@@ -495,6 +533,7 @@ h1 em {
   .linha-tempo > li { grid-template-columns: 1fr; }
   .projeto-links { flex-direction: row; align-items: flex-start; gap: 1.25rem; }
   .projeto:hover { padding-left: 0; }
+  .diagnostico div { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

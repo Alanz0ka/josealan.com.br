@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 — Alan Aquino</title>
+  <title>Página não encontrada — Alan Aquino</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f2eee6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
+
+  <!-- Caminhos absolutos: o GitHub Pages serve esta página em qualquer endereço -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,18 +16,47 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+
   <header class="barra">
     <a href="/" class="barra-dominio">josealan.com.br</a>
-    <span class="barra-local">erro 404</span>
+    <span class="barra-local">Maceió, AL · <time id="relogio">--:--</time></span>
   </header>
+
   <main>
-    <section class="abertura" style="grid-template-columns: 1fr; border-bottom: 0;">
+
+    <section class="abertura erro">
       <div>
-        <h1>Nada <em>aqui</em></h1>
-        <p class="manifesto">Essa página não existe, ou mudou de lugar.</p>
-        <nav class="atalhos"><a href="/">← Voltar para o início</a></nav>
+        <p class="status">Erro 404 <span class="sep">/</span> Página não encontrada</p>
+        <h1>4<em>0</em>4</h1>
+        <p class="manifesto">
+          Essa página não existe ou mudou de lugar. Acontece até na rede
+          mais bem documentada.
+        </p>
+
+        <dl class="diagnostico">
+          <div><dt>Endereço</dt><dd id="caminho">—</dd></div>
+          <div><dt>Resposta</dt><dd><span class="erro-codigo">404</span> Not Found</dd></div>
+          <div><dt>Próximo passo</dt><dd>voltar para uma rota conhecida</dd></div>
+        </dl>
+
+        <nav class="atalhos" aria-label="Seções">
+          <a href="/">← Início</a>
+          <a href="/#agora">Agora</a>
+          <a href="/#trajetoria">Trajetória</a>
+          <a href="/#projetos">Projetos</a>
+          <a href="/#stack">Stack</a>
+          <a href="/#contato">Contato</a>
+        </nav>
       </div>
     </section>
+
   </main>
+
+  <footer class="rodape">
+    <span>© <span id="ano">2026</span> José Alan de Aquino Santos</span>
+    <span>Maceió, AL</span>
+  </footer>
+
+  <script src="/script.js" defer></script>
 </body>
 </html>

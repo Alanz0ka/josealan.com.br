@@ -16,6 +16,16 @@ setInterval(atualizarRelogio, 15000);
 // Ano no rodapé
 document.getElementById('ano').textContent = new Date().getFullYear();
 
+// Endereço pedido, na página 404
+const caminho = document.getElementById('caminho');
+if (caminho) {
+  try {
+    caminho.textContent = decodeURI(location.pathname);
+  } catch {
+    caminho.textContent = location.pathname;
+  }
+}
+
 // Botão "copiar" do e-mail
 document.querySelectorAll('[data-copiar]').forEach((botao) => {
   botao.addEventListener('click', async () => {
