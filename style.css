@@ -447,6 +447,33 @@ h1 em {
 
 .copiar:hover { color: var(--tinta); border-color: var(--tinta); }
 
+.whatsapp {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+  margin-top: 1.25rem;
+  text-decoration: none;
+}
+
+.whatsapp-rotulo {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--lapis);
+}
+
+.whatsapp-numero {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.1;
+}
+
+.whatsapp-numero .seta { font-family: var(--mono); font-size: 0.45em; vertical-align: 0.6em; }
+
+.whatsapp:hover .whatsapp-numero { color: var(--marca); }
+
 .redes {
   display: flex;
   flex-wrap: wrap;

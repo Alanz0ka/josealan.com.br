@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Currículo — José Alan de Aquino Santos</title>
+<meta name="author" content="José Alan de Aquino Santos">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 11mm 13mm 10mm; }
+
+  :root {
+    --tinta: #1a1917;
+    --lapis: #5c5852;
+    --linha: #d9d3c7;
+    --marca: #c2391a;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    margin: 0;
+    font-family: "IBM Plex Sans", Arial, sans-serif;
+    font-size: 8.9pt;
+    line-height: 1.38;
+    color: var(--tinta);
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- Cabeçalho ---------- */
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4mm;
+    align-items: end;
+    padding-bottom: 3.5mm;
+    border-bottom: 1.2pt solid var(--tinta);
+  }
+
+  h1 {
+    margin: 0;
+    font-family: "Instrument Serif", Georgia, serif;
+    font-weight: 400;
+    font-size: 25pt;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .cargo {
+    margin: 1.5mm 0 0;
+    font-size: 10.5pt;
+    font-weight: 500;
+  }
+
+  .cargo span { color: var(--marca); }
+
+  .contatos {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: right;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 7.9pt;
+    line-height: 1.55;
+    color: var(--lapis);
+  }
+
+  .contatos strong { color: var(--tinta); font-weight: 500; }
+
+  /* ---------- Seções ---------- */
+  section { margin-top: 3.4mm; }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 2.5mm;
+    margin: 0 0 2mm;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 7.8pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--marca);
+  }
+
+  h2::after {
+    content: "";
+    flex: 1;
+    height: 0.6pt;
+    background: var(--linha);
+  }
+
+  p { margin: 0; }
+
+  .resumo { text-align: justify; hyphens: auto; }
+
+  /* ---------- Experiência ---------- */
+  .empresa { margin-bottom: 2.2mm; break-inside: avoid; }
+  .empresa:last-child { margin-bottom: 0; }
+
+  .empresa-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 10pt;
+    font-weight: 600;
+  }
+
+  .local {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 7.6pt;
+    color: var(--lapis);
+    white-space: nowrap;
+  }
+
+  .cargo-item { margin-top: 1mm; break-inside: avoid; }
+
+  .cargo-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+
+  .cargo-nome { font-weight: 500; }
+  .cargo-nome.atual { color: var(--marca); }
+
+  .periodo {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 7.6pt;
+    color: var(--lapis);
+    white-space: nowrap;
+  }
+
+  ul.itens {
+    margin: 0.8mm 0 0;
+    padding-left: 3.6mm;
+  }
+
+  ul.itens li { margin: 0.15mm 0; padding-left: 0.6mm; }
+  ul.itens li::marker { color: var(--marca); }
+
+  .progressao {
+    margin-top: 0.6mm;
+    color: var(--lapis);
+    font-size: 8.6pt;
+  }
+
+  /* ---------- Duas colunas ---------- */
+  .colunas {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 0 7mm;
+  }
+
+  dl.competencias { margin: 0; }
+  dl.competencias div { margin-bottom: 1.3mm; break-inside: avoid; }
+  dl.competencias dt { font-weight: 600; font-size: 8.8pt; }
+  dl.competencias dd { margin: 0; color: var(--tinta); }
+
+  .formacao-item { margin-bottom: 2mm; break-inside: avoid; }
+  .formacao-item:last-child { margin-bottom: 0; }
+  .formacao-item .detalhe { color: var(--lapis); font-size: 8.6pt; }
+
+  .projeto { margin-bottom: 1mm; break-inside: avoid; }
+  .projeto strong { font-weight: 600; }
+  .projeto .stack {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 7.4pt;
+    color: var(--lapis);
+  }
+
+  .linha-simples { display: flex; justify-content: space-between; gap: 3mm; margin-bottom: 0.8mm; }
+  .linha-simples span:last-child { color: var(--lapis); }
+  .nw { white-space: nowrap; }
+  .competencias-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 0.8mm 7mm; margin:0; }
+  .competencias-grid div { break-inside: avoid; }
+  .competencias-grid dt { display:inline; font-weight:600; }
+  .competencias-grid dt::after { content: ": "; }
+  .competencias-grid dd { display:inline; margin:0; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>José Alan de Aquino Santos</h1>
+    <p class="cargo">Analista de Suporte N2 <span>·</span> Infraestrutura de TI e Desenvolvimento</p>
+  </div>
+  <ul class="contatos">
+    <li>Maceió, AL</li>
+    <li><strong>(82) 99370-0470</strong></li>
+    <li><a href="mailto:contato@josealan.com.br">contato@josealan.com.br</a></li>
+    <li><a href="https://josealan.com.br">josealan.com.br</a></li>
+    <li><a href="https://www.linkedin.com/in/josealandeaquinosantos/">linkedin.com/in/josealandeaquinosantos</a></li>
+    <li><a href="https://github.com/Alanz0ka">github.com/Alanz0ka</a></li>
+  </ul>
+</header>
+
+<section>
+  <h2>Resumo</h2>
+  <p class="resumo">
+    Analista de Suporte N2 em MSP de Maceió, onde comecei como estagiário em 2022. Ponto de escalonamento do N1 em
+    ambientes multi-site: incidentes de rede e servidores, análise de causa raiz e documentação. Estudante de Sistemas
+    para Internet (UNCISAL) e desenvolvedor full stack no PET-Saúde/I&amp;SD.
+  </p>
+</section>
+
+<section>
+  <h2>Experiência</h2>
+
+  <div class="empresa">
+    <div class="empresa-topo">
+      <h3>I.Soluções Tecnologia e Inovação</h3>
+      <span class="local">Maceió, AL · presencial</span>
+    </div>
+
+    <div class="cargo-item">
+      <div class="cargo-linha">
+        <span class="cargo-nome atual">Analista de Suporte N2</span>
+        <span class="periodo">ago 2026 — atual</span>
+      </div>
+      <ul class="itens">
+        <li>Atendimento N2 de incidentes escalonados pelo N1: análise de causa raiz e resolução de problemas complexos de rede e servidores, com gestão de chamados no Jira Service Desk.</li>
+        <li>Projeto, configuração e administração de redes Ubiquiti UniFi (VLANs, SD-WAN, roteamento e Wi-Fi) em múltiplos sites.</li>
+        <li>Administração de Windows Server, Active Directory e Hyper-V (réplicas, failover, migrações); storage QNAP (iSCSI/LUNs) e backup em nuvem <span class="nw">N-able</span> Cove.</li>
+        <li>Monitoramento via RMM <span class="nw">N-able</span>, CFTV e telefonia IP Intelbras, apoio ao N1 e documentação de procedimentos.</li>
+      </ul>
+    </div>
+
+    <div class="cargo-item">
+      <div class="cargo-linha">
+        <span class="cargo-nome">Técnico de Redes e Suporte N1</span>
+        <span class="periodo">out 2025 — jul 2026</span>
+      </div>
+      <ul class="itens">
+        <li>Gestão da infraestrutura de clientes multi-site (UniFi, Windows Server, Hyper-V, QNAP e backup) e resolução de incidentes críticos, reduzindo o tempo de parada.</li>
+      </ul>
+    </div>
+
+    <div class="cargo-item">
+      <div class="cargo-linha">
+        <span class="cargo-nome">Auxiliar Técnico em Redes e Suporte</span>
+        <span class="periodo">fev 2025 — out 2025</span>
+      </div>
+      <ul class="itens">
+        <li>Suporte técnico aos usuários e sustentação de servidores Windows Server, com gestão proativa de ativos via RMM <span class="nw">N-able</span>.</li>
+      </ul>
+    </div>
+
+    <div class="cargo-item">
+      <div class="cargo-linha">
+        <span class="cargo-nome">Estagiário — Técnico de Redes</span>
+        <span class="periodo">set 2022 — fev 2023</span>
+      </div>
+      <ul class="itens">
+        <li>Monitoramento de servidores Windows e administração de usuários no Active Directory.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="empresa">
+    <div class="empresa-topo">
+      <h3>UNCISAL — Universidade Estadual de Ciências da Saúde de Alagoas</h3>
+      <span class="local">Maceió, AL</span>
+    </div>
+    <div class="cargo-item">
+      <div class="cargo-linha">
+        <span class="cargo-nome atual">Bolsista PET-Saúde/I&amp;SD — Desenvolvimento Full Stack</span>
+        <span class="periodo">jun 2026 — atual</span>
+      </div>
+      <ul class="itens">
+        <li>Programa dos Ministérios da Saúde e da Educação para a transformação digital do SUS: digitalização da anamnese e da requisição de mamografia com JavaScript, Node.js e MariaDB, incluindo deploy e treinamento das equipes de saúde.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="empresa">
+    <div class="empresa-topo">
+      <h3>Instituto Federal de Alagoas (IFAL)</h3>
+      <span class="local">Maceió, AL</span>
+    </div>
+    <div class="cargo-item">
+      <div class="cargo-linha">
+        <span class="cargo-nome">Instrutor de Desenvolvimento Web — Projeto de ensino Blessed</span>
+        <span class="periodo">jun 2023 — ago 2024</span>
+      </div>
+      <ul class="itens">
+        <li>Aulas de desenvolvimento web intermediário: HTML, CSS, JavaScript, Git, GitHub e Firebase.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="empresa">
+    <h3 style="font-size:9.3pt">Outras experiências</h3>
+    <div class="linha-simples" style="margin-top:1mm"><span><strong>SAS Comunicação</strong> — Estágio em Análise de Projetos</span><span class="periodo">jan 2022 — dez 2022</span></div>
+    <div class="linha-simples"><span><strong>SENAI</strong> — Instrutor no curso de Operador de Computadores</span><span class="periodo">ago 2022 — dez 2022</span></div>
+    <div class="linha-simples"><span><strong>Instituto Coneragir</strong> — Monitor no curso de Informática Básica</span><span class="periodo">nov 2021 — abr 2023</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Competências técnicas</h2>
+  <dl class="competencias-grid">
+    <div><dt>Redes</dt><dd>UniFi (VLANs, SD-WAN, Wi-Fi), firewalls</dd></div>
+    <div><dt>Servidores</dt><dd>Windows Server, Active Directory, Hyper-V</dd></div>
+    <div><dt>Storage e backup</dt><dd>QNAP (iSCSI/LUNs), <span class="nw">N-able</span> Cove</dd></div>
+    <div><dt>Operação</dt><dd>RMM <span class="nw">N-able</span>, Jira Service Desk</dd></div>
+    <div><dt>Segurança e telefonia</dt><dd>CFTV e telefonia IP Intelbras</dd></div>
+    <div><dt>Desenvolvimento</dt><dd>Python, Node.js, SQL, Git, Docker</dd></div>
+  </dl>
+</section>
+
+<div class="colunas">
+  <div>
+    <section>
+      <h2>Formação</h2>
+      <div class="formacao-item">
+        <p><strong>Tecnólogo em Sistemas para Internet</strong> · UNCISAL</p>
+        <p class="periodo">fev 2025 — jul 2027 (previsão)</p>
+      </div>
+      <div class="formacao-item">
+        <p><strong>Técnico em Desenvolvimento de Sistemas</strong> · IFAL</p>
+        <p class="periodo">2019 — 2024 · integrado ao ensino médio</p>
+        <p class="detalhe">Pesquisa Enxerga (tecnologias assistivas)</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Idiomas e eventos</h2>
+      <p>Português (nativo) · Inglês (intermediário) · Espanhol (básico)</p>
+      <p class="detalhe" style="color:var(--lapis);margin-top:0.8mm">Roga DX 2026 · Oxe Hacker Conference 2026</p>
+    </section>
+  </div>
+
+  <div>
+    <section>
+      <h2>Projetos · github.com/Alanz0ka</h2>
+      <div class="projeto"><p><strong>ChamaTI</strong> — chamados de TI com Kanban <span class="stack">Python/Flask</span></p></div>
+      <div class="projeto"><p><strong>e-Mamografia</strong> — anamnese digital do SUS <span class="stack">Electron</span></p></div>
+      <div class="projeto"><p><strong>Reboot Ubiquiti</strong> — reinício de antenas via SSH <span class="stack">Python</span></p></div>
+      <div class="projeto"><p><strong>Instalador n8n</strong> — n8n em Docker no Raspberry Pi <span class="stack">Shell</span></p></div>
+    </section>
+  </div>
+</div>
+
+</body>
+</html>
