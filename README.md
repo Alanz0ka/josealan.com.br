@@ -30,6 +30,29 @@ No repositório: **Settings → Pages**
 
 ---
 
+## Configuração atual
+
+- **Registrador:** Registro.br, com nameservers `macy.ns.cloudflare.com` e `pablo.ns.cloudflare.com`
+- **DNS e e-mail:** Cloudflare (plano Free)
+- **Hospedagem:** GitHub Pages (`Alanz0ka/josealan.com.br`, branch `main`)
+
+| Tipo | Nome | Valor | Função |
+|---|---|---|---|
+| A (×4) | `@` | `185.199.108–111.153` | GitHub Pages |
+| CNAME | `www` | `alanz0ka.github.io` | GitHub Pages |
+| MX | `@` | `route1/2/3.mx.cloudflare.net` (58/83/86) | Email Routing |
+| TXT | `@` | `v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all` | SPF |
+| TXT | `cf2024-1._domainkey` | chave DKIM da Cloudflare | DKIM |
+| TXT | `_dmarc` | `v=DMARC1; p=none;` | DMARC |
+
+Todos os registros ficam em **"Somente DNS"** (nuvem cinza).
+
+Regra de e-mail: `contato@josealan.com.br` → Gmail pessoal.
+
+Os passos abaixo documentam como essa configuração foi feita.
+
+---
+
 ## 2. Passar o DNS para a Cloudflare
 
 A Cloudflare só oferece o e-mail personalizado grátis (Email Routing) se ela cuidar do
