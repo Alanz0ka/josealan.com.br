@@ -1,0 +1,503 @@
+/* ------------------------------------------------------------
+   josealan.com.br
+   Papel + tinta + um vermelho. Nada de gradiente.
+   ------------------------------------------------------------ */
+
+:root {
+  --papel: #f2eee6;
+  --tinta: #1a1917;
+  --lapis: #6b6760;
+  --linha: #d9d3c7;
+  --marca: #d6401f;
+
+  --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --largura: 72rem;
+  --margem: clamp(1.25rem, 4vw, 3rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papel: #151412;
+    --tinta: #ece7dc;
+    --lapis: #9a948a;
+    --linha: #2e2c28;
+    --marca: #ff6a45;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--marca); color: var(--papel); }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--marca);
+  outline-offset: 3px;
+}
+
+/* ---------- Barra superior ---------- */
+
+.barra {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 1.25rem var(--margem);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--lapis);
+}
+
+.barra-dominio { text-decoration: none; color: var(--tinta); }
+
+main {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 0 var(--margem);
+}
+
+/* ---------- Abertura ---------- */
+
+.abertura {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: clamp(2rem, 6vw, 5rem);
+  padding: clamp(3rem, 10vw, 7rem) 0 clamp(3rem, 7vw, 5rem);
+  border-bottom: 1px solid var(--tinta);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--lapis);
+}
+
+.status .sep { color: var(--marca); }
+
+h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(4rem, 14vw, 10.5rem);
+  line-height: 0.85;
+  letter-spacing: -0.03em;
+}
+
+h1 em {
+  font-style: italic;
+  color: var(--marca);
+}
+
+.manifesto {
+  max-width: 34rem;
+  margin: 2rem 0 0;
+  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  line-height: 1.55;
+}
+
+.atalhos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin-top: 2.5rem;
+  font-family: var(--mono);
+  font-size: 0.875rem;
+}
+
+.atalhos a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--linha);
+  padding-bottom: 1px;
+}
+
+.atalhos a:hover { border-color: var(--marca); color: var(--marca); }
+
+.retrato {
+  margin: 0;
+  width: clamp(11rem, 22vw, 17rem);
+}
+
+.retrato img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 30%;
+  filter: grayscale(1) contrast(1.05);
+}
+
+.retrato figcaption {
+  margin-top: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--lapis);
+}
+
+/* ---------- Blocos numerados ---------- */
+
+.bloco {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: 1.5rem 2rem;
+  padding: clamp(3rem, 7vw, 5rem) 0;
+  border-bottom: 1px solid var(--linha);
+  scroll-margin-top: 1rem;
+}
+
+.bloco:last-child { border-bottom: 0; }
+
+.rotulo {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.rotulo span {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--marca);
+}
+
+/* ---------- Agora ---------- */
+
+.agora {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1.75rem 2.5rem;
+}
+
+.agora li {
+  padding-left: 1rem;
+  border-left: 2px solid var(--marca);
+}
+
+.agora strong {
+  display: block;
+  font-weight: 600;
+}
+
+.agora span { color: var(--lapis); font-size: 0.9375rem; }
+
+.citacao {
+  margin: 0 0 2.5rem;
+  max-width: 44rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.5rem, 3.2vw, 2.25rem);
+  line-height: 1.2;
+}
+
+.citacao::before { content: "“"; color: var(--marca); }
+.citacao::after { content: "”"; color: var(--marca); }
+
+/* ---------- Trajetória ---------- */
+
+.trajetoria {
+  display: grid;
+  grid-template-columns: 1fr 17rem;
+  gap: 2.5rem 3rem;
+}
+
+.linha-tempo {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--tinta);
+}
+
+.linha-tempo > li {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.25rem 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--linha);
+}
+
+.periodo {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--lapis);
+  padding-top: 0.3rem;
+}
+
+.linha-tempo h3 {
+  margin: 0 0 0.35rem;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.15;
+}
+
+.linha-tempo p { margin: 0; max-width: 38rem; }
+
+.subida {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0;
+  margin: 0.15rem 0 0.75rem !important;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--lapis);
+}
+
+.subida span + span::before {
+  content: "→";
+  margin: 0 0.5rem;
+  color: var(--linha);
+}
+
+.subida .atual { color: var(--marca); font-weight: 500; }
+
+.formacao { margin: 0; display: grid; gap: 2rem; align-content: start; }
+
+.formacao dt {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--lapis);
+}
+
+.formacao dd {
+  margin: 0.5rem 0 0;
+  font-size: 0.9375rem;
+  color: var(--lapis);
+}
+
+.formacao dd strong { color: var(--tinta); font-weight: 600; }
+
+/* ---------- Stack ---------- */
+
+.stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: 2.5rem 3rem;
+}
+
+.stack-titulo {
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--tinta);
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.stack .ferramentas { grid-template-columns: 1fr; gap: 1rem; }
+
+/* ---------- Projetos ---------- */
+
+.projetos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--tinta);
+}
+
+.projeto {
+  display: grid;
+  grid-template-columns: 4rem 1fr auto;
+  gap: 0.5rem 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--linha);
+  transition: padding 0.2s ease;
+}
+
+.projeto:hover { padding-left: 0.75rem; }
+
+.projeto-ano {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--lapis);
+  padding-top: 0.35rem;
+}
+
+.projeto h3 {
+  margin: 0 0 0.35rem;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+.projeto:hover h3 { color: var(--marca); }
+
+.projeto p {
+  margin: 0;
+  max-width: 40rem;
+}
+
+.projeto-stack {
+  margin-top: 0.6rem !important;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--lapis);
+}
+
+.projeto-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  padding-top: 0.35rem;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+.projeto-links a { text-decoration: none; }
+.projeto-links a:hover { color: var(--marca); text-decoration: underline; }
+
+.mais {
+  grid-column: 2;
+  justify-self: start;
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--marca);
+}
+
+.mais:hover { color: var(--marca); }
+
+/* ---------- Ferramentas ---------- */
+
+.ferramentas {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1.75rem 2rem;
+}
+
+.ferramentas dt {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--lapis);
+}
+
+.ferramentas dd { margin: 0.25rem 0 0; }
+
+/* ---------- Contato ---------- */
+
+.contato-chamada {
+  margin: 0 0 1rem;
+  color: var(--lapis);
+}
+
+.email {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+}
+
+.email-link {
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 5.5vw, 3.75rem);
+  line-height: 1.1;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  background-image: linear-gradient(var(--marca), var(--marca));
+  background-size: 100% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+}
+
+.email-link:hover { color: var(--marca); }
+
+.copiar {
+  font: 500 0.75rem var(--mono);
+  color: var(--lapis);
+  background: none;
+  border: 1px solid var(--linha);
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+.copiar:hover { color: var(--tinta); border-color: var(--tinta); }
+
+.redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 0.9375rem;
+}
+
+.redes a { text-decoration: none; }
+.redes a:hover { color: var(--marca); text-decoration: underline; }
+
+/* ---------- Rodapé ---------- */
+
+.rodape {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 2rem var(--margem) 2.5rem;
+  border-top: 1px solid var(--tinta);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--lapis);
+}
+
+/* ---------- Telas menores ---------- */
+
+@media (max-width: 64rem) {
+  .trajetoria { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 52rem) {
+  .bloco { grid-template-columns: 1fr; }
+  .mais { grid-column: 1; }
+}
+
+@media (max-width: 40rem) {
+  .abertura { grid-template-columns: 1fr; }
+  .retrato { order: -1; width: 8rem; }
+  .projeto,
+  .linha-tempo > li { grid-template-columns: 1fr; }
+  .projeto-links { flex-direction: row; align-items: flex-start; gap: 1.25rem; }
+  .projeto:hover { padding-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .projeto { transition: none; }
+}
