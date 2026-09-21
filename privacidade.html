@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de privacidade do rclone-homelab — Alan Aquino</title>
+  <meta name="description" content="Política de privacidade do rclone-homelab, aplicativo de uso pessoal de José Alan de Aquino Santos para guardar backups no próprio Google Drive.">
+  <meta name="author" content="José Alan de Aquino Santos">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://josealan.com.br/privacidade">
+  <meta name="theme-color" content="#f2eee6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <header class="barra">
+    <a href="/" class="barra-dominio">josealan.com.br</a>
+    <span class="barra-local">Maceió, AL · <time id="relogio">--:--</time></span>
+  </header>
+
+  <main>
+
+    <!-- ============ ABERTURA ============ -->
+    <section class="abertura pagina-texto">
+      <div>
+        <p class="status">rclone-homelab <span class="sep">/</span> Aplicativo de uso pessoal</p>
+        <h1>Política de <em>privacidade</em></h1>
+        <p class="manifesto">
+          O <strong>rclone-homelab</strong> liga o programa de código aberto
+          <a href="https://rclone.org">rclone</a> à minha própria conta Google. Ele existe para uma
+          coisa só: guardar no meu Google Drive as cópias de segurança do servidor que mantenho em casa.
+        </p>
+
+        <dl class="diagnostico">
+          <div><dt>Aplicativo</dt><dd>rclone-homelab</dd></div>
+          <div><dt>Responsável</dt><dd>José Alan de Aquino Santos</dd></div>
+          <div><dt>Atualizada em</dt><dd>20/09/2026</dd></div>
+        </dl>
+
+        <nav class="atalhos" aria-label="Navegação">
+          <a href="/">← Início</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ 01 QUEM USA ============ -->
+    <section class="bloco">
+      <h2 class="rotulo"><span>01</span>Quem usa</h2>
+      <div class="texto">
+        <p>
+          Só eu. O aplicativo não é oferecido ao público, não tem cadastro e não recebe
+          dados de outras pessoas.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ 02 O QUE ELE ACESSA ============ -->
+    <section class="bloco">
+      <h2 class="rotulo"><span>02</span>O que ele acessa</h2>
+      <div class="texto">
+        <p>
+          Ele pede ao Google a permissão mais restrita do Drive (<code>drive.file</code>):
+          enxerga e altera <strong>apenas os arquivos que ele mesmo cria</strong>.
+        </p>
+        <p>
+          Não lê outros arquivos do Drive, e-mails, contatos, agenda nem qualquer outro
+          dado da conta.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ 03 O QUE É FEITO COM OS DADOS ============ -->
+    <section class="bloco">
+      <h2 class="rotulo"><span>03</span>O que é feito com os dados</h2>
+      <div class="texto">
+        <ul>
+          <li>Os arquivos enviados são backups do meu próprio servidor.</li>
+          <li>Eles vão direto do servidor para o Google Drive, sem serviço intermediário.</li>
+          <li>Nada é coletado, vendido, compartilhado nem usado para publicidade.</li>
+        </ul>
+        <p>
+          O uso das informações recebidas das APIs do Google segue a
+          <a href="https://developers.google.com/terms/api-services-user-data-policy">Política de Dados do Usuário dos Serviços de API do Google</a>,
+          incluindo os requisitos de Uso Limitado.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ 04 COMO REVOGAR ============ -->
+    <section class="bloco">
+      <h2 class="rotulo"><span>04</span>Como revogar</h2>
+      <div class="texto">
+        <p>
+          A permissão pode ser removida a qualquer momento na Conta Google, em
+          <a href="https://myaccount.google.com/connections">Conexões com apps e serviços de terceiros</a>.
+          Os arquivos já enviados podem ser apagados direto no Google Drive.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ 05 CONTATO ============ -->
+    <section class="bloco">
+      <h2 class="rotulo"><span>05</span>Contato</h2>
+      <div class="texto">
+        <p>
+          Dúvidas sobre esta política:
+          <a href="mailto:contato@josealan.com.br">contato@josealan.com.br</a>.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <span>© <span id="ano">2026</span> José Alan de Aquino Santos</span>
+    <span>Maceió, AL</span>
+  </footer>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>

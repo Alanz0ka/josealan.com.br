@@ -29,6 +29,9 @@ Detalhes:
 - **Relógio** com o horário de Maceió no topo da página.
 - Metadados **Open Graph** para a pré-visualização do link no WhatsApp e no LinkedIn.
 - Página **404** personalizada.
+- Página [`/privacidade`](https://josealan.com.br/privacidade): política de privacidade do **rclone-homelab**, o
+  cliente OAuth de uso pessoal que envia os backups do homelab para o Google Drive (o Google exige o link para
+  publicar o app). Fica fora dos buscadores (`noindex`) e não é ligada pela página principal.
 
 ## Tecnologias
 
@@ -46,6 +49,7 @@ josealan.com.br/
 ├── style.css                    # Estilos (tema claro/escuro, responsivo)
 ├── script.js                    # Relógio, ano do rodapé e botão "copiar e-mail"
 ├── 404.html                     # Página de erro
+├── privacidade.html             # Política de privacidade do rclone-homelab (app pessoal de backup)
 ├── favicon.svg                  # Ícone da aba
 ├── CNAME                        # Domínio personalizado do GitHub Pages
 ├── assets/

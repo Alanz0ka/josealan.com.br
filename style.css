@@ -515,6 +515,42 @@ h1 em {
 
 .erro-codigo { color: var(--marca); font-weight: 500; }
 
+/* ---------- Páginas de texto (privacidade) ---------- */
+
+.pagina-texto { grid-template-columns: 1fr; }
+
+.pagina-texto h1 {
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  line-height: 0.95;
+}
+
+.manifesto a,
+.texto a {
+  text-decoration-color: var(--marca);
+  text-underline-offset: 3px;
+}
+
+.manifesto a:hover,
+.texto a:hover { color: var(--marca); }
+
+.texto { max-width: 40rem; }
+
+.texto p,
+.texto ul { margin: 0 0 1rem; }
+
+.texto > :last-child { margin-bottom: 0; }
+
+.texto ul { padding-left: 1.1rem; }
+
+.texto li { margin-bottom: 0.4rem; }
+
+.texto li::marker { color: var(--marca); }
+
+.texto code {
+  font-family: var(--mono);
+  font-size: 0.9em;
+}
+
 /* ---------- Telas menores ---------- */
 
 @media (max-width: 64rem) {
