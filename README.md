@@ -50,6 +50,7 @@ josealan.com.br/
 ├── script.js                    # Relógio, ano do rodapé e botão "copiar e-mail"
 ├── 404.html                     # Página de erro
 ├── privacidade.html             # Política de privacidade do rclone-homelab (app pessoal de backup)
+├── in.html / ig.html            # Links de entrada do LinkedIn e do Instagram (contam a visita e levam ao início)
 ├── favicon.svg                  # Ícone da aba
 ├── CNAME                        # Domínio personalizado do GitHub Pages
 ├── assets/
@@ -124,6 +125,24 @@ Observações:
 - Os números são amostrados (vêm arredondados, em múltiplos de 10). Com pouco tráfego, uma visita isolada pode
   não aparecer, e os dados levam alguns minutos para chegar ao painel.
 - Visitas de quem bloqueia scripts de análise (bloqueadores de anúncio, alguns navegadores) não são contadas.
-- O script só está na página principal e na 404. A página `/privacidade` fica sem contagem.
+- O script está na página principal, na 404 e nos links de entrada. A página `/privacidade` fica sem contagem.
 - No painel, a configuração do site deve continuar em **"Ative com a instalação do JS Snippet"**. A injeção
   automática não funciona aqui porque o DNS do site está em "DNS only".
+
+### Links de entrada por rede
+
+O Web Analytics **não registra parâmetros de URL**, então links com `?utm_source=` aparecem só como `/`
+([FAQ da Cloudflare](https://developers.cloudflare.com/web-analytics/faq/)). Para separar as redes, cada uma tem
+um endereço próprio:
+
+| Rede | Link para divulgar | Arquivo |
+|------|--------------------|---------|
+| LinkedIn | `https://josealan.com.br/in` | `in.html` |
+| Instagram | `https://josealan.com.br/ig` | `ig.html` |
+
+A página conta a visita, espera o carregamento terminar e leva para o início (`location.replace`). Sem
+JavaScript, um `meta refresh` leva depois de 3 s. As duas ficam fora dos buscadores (`noindex`, `canonical` para
+o início). No painel, a aba **Caminho** mostra `/in` e `/ig`; a visita seguinte em `/` vem com referente interno
+e não conta como visita nova.
+
+Para criar outra rede, copie `in.html` com outro nome (ex.: `gh.html` para o GitHub) e troque a rede no comentário.
