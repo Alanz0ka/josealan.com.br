@@ -104,3 +104,26 @@ Qualquer `git push` na branch `main` publica o site automaticamente pelo GitHub 
 | Cloudflare DNS | Registros A/CNAME apontando para o GitHub Pages |
 | Cloudflare Email Routing | Encaminhamento de `contato@josealan.com.br` |
 | Cloudflare Web Analytics | Contagem de visitas sem cookies (snippet em `index.html` e `404.html`; o DNS é "DNS only", então a injeção automática não funciona) |
+
+## Métricas de acesso
+
+As visitas são contadas pelo **Cloudflare Web Analytics**, sem cookies e sem coletar dados pessoais. A contagem
+começou em 03/10/2026; não existe histórico de antes disso.
+
+Como ver:
+
+1. Entrar no painel da Cloudflare (`dash.cloudflare.com`).
+2. No menu lateral, abrir **Análise e registros → Web Analytics** e clicar no site `josealan.com.br`.
+3. No seletor de período (padrão "Últimas 24 horas"), escolher **Últimos 7 dias** ou **Últimos 30 dias**.
+4. Abrir a aba **Visitas** para ver a origem (referente), os caminhos, os países, os navegadores e os dispositivos.
+5. Para olhar só o site, usar a aba **Host** e a linha `josealan.com.br`. Até 03/10/2026, o mesmo site do
+   Web Analytics também media os subdomínios do homelab, e esses dados antigos aparecem misturados.
+
+Observações:
+
+- Os números são amostrados (vêm arredondados, em múltiplos de 10). Com pouco tráfego, uma visita isolada pode
+  não aparecer, e os dados levam alguns minutos para chegar ao painel.
+- Visitas de quem bloqueia scripts de análise (bloqueadores de anúncio, alguns navegadores) não são contadas.
+- O script só está na página principal e na 404. A página `/privacidade` fica sem contagem.
+- No painel, a configuração do site deve continuar em **"Ative com a instalação do JS Snippet"**. A injeção
+  automática não funciona aqui porque o DNS do site está em "DNS only".
