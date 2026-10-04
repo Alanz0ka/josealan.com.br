@@ -103,3 +103,4 @@ Qualquer `git push` na branch `main` publica o site automaticamente pelo GitHub 
 | Registro.br | Registro do domínio `josealan.com.br` |
 | Cloudflare DNS | Registros A/CNAME apontando para o GitHub Pages |
 | Cloudflare Email Routing | Encaminhamento de `contato@josealan.com.br` |
+| Cloudflare Web Analytics | Contagem de visitas sem cookies (snippet em `index.html` e `404.html`; o DNS é "DNS only", então a injeção automática não funciona) |
