@@ -113,7 +113,7 @@ começou em 03/10/2026; não existe histórico de antes disso.
 Como ver:
 
 1. Entrar no painel da Cloudflare (`dash.cloudflare.com`).
-2. No menu lateral, abrir **Análise e registros → Web Analytics** e clicar no site `josealan.com.br`.
+2. No menu lateral, abrir **Análise → Web Analytics** (o painel mostra os sites da conta; hoje só existe `josealan.com.br`).
 3. No seletor de período (padrão "Últimas 24 horas"), escolher **Últimos 7 dias** ou **Últimos 30 dias**.
 4. Abrir a aba **Visitas** para ver a origem (referente), os caminhos, os países, os navegadores e os dispositivos.
 5. Para olhar só o site, usar a aba **Host** e a linha `josealan.com.br`. Até 03/10/2026, o mesmo site do
