@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alan Aquino</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://josealan.com.br/">
+  <meta name="theme-color" content="#f2eee6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
+  <!-- Link de entrada para quem vem do GitHub: o Web Analytics conta a visita em /gh e a página leva para o início.
+       Se o JavaScript não rodar, o meta refresh leva depois de 3 s. -->
+  <meta http-equiv="refresh" content="3; url=/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <main>
+    <section class="abertura erro">
+      <div>
+        <p class="status">josealan.com.br</p>
+        <p class="manifesto">Abrindo o site… <a href="/">clique aqui</a> se não abrir sozinho.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9f0ca936fca543fe9af7e405410bec12"}'></script><!-- End Cloudflare Web Analytics -->
+  <script>
+    // O evento load só dispara depois que o script do Web Analytics rodou; a espera curta dá tempo de a contagem sair.
+    addEventListener('load', () => setTimeout(() => location.replace('/'), 400));
+  </script>
+</body>
+</html>
