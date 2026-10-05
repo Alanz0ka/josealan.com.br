@@ -50,7 +50,7 @@ josealan.com.br/
 ├── script.js                    # Relógio, ano do rodapé e botão "copiar e-mail"
 ├── 404.html                     # Página de erro
 ├── privacidade.html             # Política de privacidade do rclone-homelab (app pessoal de backup)
-├── in.html / ig.html / aws.html # Links de entrada do LinkedIn, do Instagram e da AWS (contam a visita e levam ao início)
+├── {in,ig,aws,gh}.html          # Links de entrada do LinkedIn, Instagram, AWS e GitHub (contam a visita e levam ao início)
 ├── favicon.svg                  # Ícone da aba
 ├── CNAME                        # Domínio personalizado do GitHub Pages
 ├── assets/
@@ -140,10 +140,11 @@ um endereço próprio:
 | LinkedIn | `https://josealan.com.br/in` | `in.html` |
 | Instagram | `https://josealan.com.br/ig` | `ig.html` |
 | AWS | `https://josealan.com.br/aws` | `aws.html` |
+| GitHub | `https://josealan.com.br/gh` | `gh.html` |
 
 A página conta a visita, espera o carregamento terminar e leva para o início (`location.replace`). Sem
 JavaScript, um `meta refresh` leva depois de 3 s. As páginas ficam fora dos buscadores (`noindex`, `canonical` para
-o início). No painel, a aba **Caminho** mostra `/in`, `/ig` e `/aws`; a visita seguinte em `/` vem com referente interno
+o início). No painel, a aba **Caminho** mostra `/in`, `/ig`, `/aws` e `/gh`; a visita seguinte em `/` vem com referente interno
 e não conta como visita nova.
 
-Para criar outra rede, copie `in.html` com outro nome (ex.: `gh.html` para o GitHub) e troque a rede no comentário.
+Para criar outra rede, copie `in.html` com outro nome (ex.: `yt.html` para o YouTube) e troque a rede no comentário.
