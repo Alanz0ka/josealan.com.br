@@ -1,0 +1,4 @@
+# Robôs podem indexar o site inteiro.
+# As páginas de entrada (/in, /ig, /aws, /gh), a 404 e /privacidade já têm noindex.
+User-agent: *
+Allow: /

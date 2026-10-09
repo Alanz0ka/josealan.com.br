@@ -51,6 +51,7 @@ josealan.com.br/
 ├── 404.html                     # Página de erro
 ├── privacidade.html             # Política de privacidade do rclone-homelab (app pessoal de backup)
 ├── {in,ig,aws,gh}.html          # Links de entrada do LinkedIn, Instagram, AWS e GitHub (contam a visita e levam ao início)
+├── robots.txt                   # Regras para robôs de busca (evita que caiam na 404 e sejam contados como visita)
 ├── favicon.svg                  # Ícone da aba
 ├── CNAME                        # Domínio personalizado do GitHub Pages
 ├── assets/
@@ -126,6 +127,9 @@ Observações:
   não aparecer, e os dados levam alguns minutos para chegar ao painel.
 - Visitas de quem bloqueia scripts de análise (bloqueadores de anúncio, alguns navegadores) não são contadas.
 - O script está na página principal, na 404 e nos links de entrada. A página `/privacidade` fica sem contagem.
+- Até 08/10/2026 não havia `robots.txt`: os robôs que o procuravam recebiam a 404 (que tem o script) e eram
+  contados como visita em `/robots.txt`, com navegador "Unknown". Com o arquivo criado, isso para; os registros
+  antigos continuam no painel.
 - No painel, a configuração do site deve continuar em **"Ative com a instalação do JS Snippet"**. A injeção
   automática não funciona aqui porque o DNS do site está em "DNS only".
 
